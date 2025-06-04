@@ -2,7 +2,7 @@ import React from 'react';
 
 interface MenuItem {
   name: string;
-  description: string;
+  description?: string;
   price: string;
   featured?: boolean;
 }
@@ -15,55 +15,103 @@ interface MenuSection {
 const Menu: React.FC = () => {
   const menuSections: MenuSection[] = [
     {
-      title: "Natti Style Specials",
+      title: "Chicken Dishes",
       items: [
         {
           name: "Chicken Natti Style Dry",
-          description: "Traditional spicy dry chicken preparation",
           price: "230",
           featured: true
         },
         {
           name: "Chicken Natti Style Fry",
-          description: "Crispy fried chicken with authentic spices",
           price: "230"
         },
         {
           name: "Chicken Kabab",
-          description: "Tender chicken kababs with special masala",
           price: "200"
         },
         {
           name: "Chicken Ghee Roast",
-          description: "Spicy roasted chicken in clarified butter",
           price: "300",
+          featured: true
+        },
+        {
+          name: "Special Chicken Dry/Fry",
+          price: "250"
+        },
+        {
+          name: "Chicken Liver Kalgaraga",
+          price: "220"
+        },
+        {
+          name: "Maharaj Chicken Biryani Special",
+          price: "250",
+          featured: true
+        },
+        {
+          name: "Chicken Biryani",
+          price: "220"
+        }
+      ]
+    },
+    {
+      title: "Mutton Dishes",
+      items: [
+        {
+          name: "Mutton Botti Dry",
+          price: "280"
+        },
+        {
+          name: "Mutton Fry",
+          price: "280"
+        },
+        {
+          name: "Mutton Masala",
+          price: "300"
+        },
+        {
+          name: "Mutton Sukka",
+          price: "340"
+        },
+        {
+          name: "Mutton Dry",
+          price: "340"
+        },
+        {
+          name: "Mutton Chops",
+          price: "300"
+        },
+        {
+          name: "Mutton Ghee Roast",
+          price: "350",
+          featured: true
+        },
+        {
+          name: "Thelle Mutton Masala",
+          price: "300"
+        },
+        {
+          name: "Thelle Mutton",
+          price: "280"
+        },
+        {
+          name: "Mutton Biryani Special",
+          price: "320",
           featured: true
         }
       ]
     },
     {
-      title: "Biryani Specialties",
+      title: "Fish Dishes",
       items: [
         {
-          name: "Maharaj Chicken Biryani Special",
-          description: "Our signature biryani with aromatic spices",
-          price: "250",
+          name: "Fish Kabab",
+          price: "200"
+        },
+        {
+          name: "Fish Tava Fry (2 pieces)",
+          price: "300",
           featured: true
-        },
-        {
-          name: "Mutton Biryani Special",
-          description: "Tender mutton pieces in fragrant rice",
-          price: "320"
-        },
-        {
-          name: "Chicken Biryani",
-          description: "Classic chicken biryani with raita",
-          price: "220"
-        },
-        {
-          name: "Special Chicken Dry/Fry",
-          description: "Chef's special preparation",
-          price: "250"
         }
       ]
     }
@@ -75,7 +123,7 @@ const Menu: React.FC = () => {
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-amber-900/10 rounded-full translate-x-1/2 translate-y-1/2 blur-3xl"></div>
       
       <div className="container mx-auto px-4 relative z-10">
-        <h2 className="text-4xl font-serif mb-8 text-center text-amber-50">Natti Style Menu</h2>
+        <h2 className="text-4xl font-serif mb-8 text-center text-amber-50">MAHARAJA RESTO BAR NATTI STYLE MENU</h2>
         <div className="w-16 h-0.5 bg-amber-500 mx-auto mb-16"></div>
         
         <div className="max-w-4xl mx-auto">
@@ -83,7 +131,7 @@ const Menu: React.FC = () => {
             <div key={index} className="mb-16">
               <h3 className="text-2xl text-amber-400 font-serif mb-8 text-center">{section.title}</h3>
               
-              <div className="space-y-8">
+              <div className="space-y-4">
                 {section.items.map((item, itemIndex) => (
                   <div 
                     key={itemIndex} 
@@ -92,7 +140,7 @@ const Menu: React.FC = () => {
                     } transition-colors duration-300 border-b border-zinc-800`}
                   >
                     <div className="flex-1">
-                      <h4 className="text-xl text-white mb-2 flex items-center">
+                      <h4 className="text-xl text-white flex items-center">
                         {item.name}
                         {item.featured && (
                           <span className="ml-2 bg-amber-700 text-amber-50 text-xs px-2 py-1 rounded-sm uppercase">
@@ -100,7 +148,6 @@ const Menu: React.FC = () => {
                           </span>
                         )}
                       </h4>
-                      <p className="text-zinc-400 text-sm mb-4 md:mb-0">{item.description}</p>
                     </div>
                     <div className="text-xl font-medium text-amber-500 md:text-right">
                       ₹{item.price}
@@ -116,4 +163,4 @@ const Menu: React.FC = () => {
   );
 };
 
-export default Menu
+export default Menu;
