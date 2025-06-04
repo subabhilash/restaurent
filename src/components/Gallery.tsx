@@ -33,12 +33,12 @@ const Gallery: React.FC = () => {
     {
       url: 'https://images.pexels.com/photos/7625056/pexels-photo-7625056.jpeg',
       alt: 'Traditional biryani',
-      caption: 'Special Maharaja Biryani'
+      caption: 'Roti curry'
     },
     {
       url: 'https://images.pexels.com/photos/2474658/pexels-photo-2474658.jpeg',
       alt: 'Chicken kebabs',
-      caption: 'Spicy Chicken Kebabs'
+      caption: 'Snacks'
     }
   ];
 
